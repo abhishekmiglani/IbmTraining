@@ -1,8 +1,4 @@
 public class SimpleRandom {
-/**
- * Test code
- * @throws InterruptedException 
- */
 public static void main(String[] args) throws InterruptedException {
     SimpleRandom rand = new SimpleRandom(100);
     for (int i = 0; i < 10; i++) {
@@ -15,16 +11,13 @@ public static void main(String[] args) throws InterruptedException {
 private int max;
 private int last;
 
-// constructor that takes the max int
 public SimpleRandom(int max){
     this.max = max;
     last = (int) (System.currentTimeMillis() % max);
     System.out.println(last);
 }
-
-// Note that the result can not be bigger then 32749
 public int nextInt(){
-    last = last * 32719 % 32750;
+    last = last * 52719 % 2749;
     return last % max;
 }
 }
